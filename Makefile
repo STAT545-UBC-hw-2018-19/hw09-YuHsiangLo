@@ -29,8 +29,9 @@ words.txt: /usr/share/dict/words crtdir
 	cp $< ./data/$@
 
 crtdir:
-	mkdir -p data
-	mkdir -p plots
+	rm -rf data plots
+	mkdir data
+	mkdir plots
 
 #words.txt: crtdir
 #	Rscript -e 'download.file("http://svnweb.freebsd.org/base/head/share/dict/web2?view=co", destfile = "./data/words.txt", quiet = TRUE)'
